@@ -1,4 +1,4 @@
-# ChatBot Processo Seletivo NeuralMind
+# ChatBot - Processo Seletivo NeuralMind
 Chatbot para responder dúvidas acerca do Vestibular Unicamp 2025 feito como parte do processo seletivo de estágio da NeuralMind jul/2024.
 
 ## Pré-requisitos
