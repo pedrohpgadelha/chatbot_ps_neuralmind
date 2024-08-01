@@ -9,23 +9,24 @@ from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
 
-# Load and process documents
+# Initializing the chatbot.
+# Load and process documents.
 file_path = "data/resolucao_vest_unicamp.pdf"
 loader = PyPDFLoader(file_path)
 docs = loader.load()
 
-# Initialize the language model
+# Initialize the language model.
 llm = ChatOpenAI(model="gpt-4o")
 
-# Split documents into manageable text chunks
+# Split documents into manageable text chunks.
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 splits = text_splitter.split_documents(docs)
 
-# Create vector store for document retrieval
+# Create vector store for document retrieval.
 vectorstore = Chroma.from_documents(documents=splits, embedding=OpenAIEmbeddings())
 retriever = vectorstore.as_retriever()
 
-# Setup system prompt for the chat
+# Setup system prompt for the chat.
 system_prompt = (
     "Você é um chatbot inteligente para responder dúvidas acerca do vestibular"
     "da unicamp de 2025. Utilize os seguintes pedaços de texto para responder a"
@@ -41,17 +42,19 @@ prompt_template = ChatPromptTemplate.from_messages(
     ]
 )
 
-# Creating chains for question answering
+# Creating chains for question answering.
 question_answer_chain = create_stuff_documents_chain(llm, prompt_template)
 rag_chain = create_retrieval_chain(retriever, question_answer_chain)
 
 def load_test_data(file_path):
+    '''
+    Retorna os dados contidos no arquivo de perguntas e respostas para teste.
+    '''
     with open(file_path, 'r') as file:
         data = json.load(file)
     return data
 
-# Initialize your RAG chain
-
+# Initialize your RAG chain.
 def test_rag_chain(rag_chain, test_data):
     predictions = []
     references = []
@@ -83,10 +86,14 @@ def evaluate(predictions, references):
         "rouge": scores
     }
 
-# Load test data
+
+# Run the tests.
+# Load the test data.
 test_data = load_test_data('data/questions_answers.json')
 
+# Run the questions through the model and get the answers and expected answers.
 predictions, references = test_rag_chain(rag_chain, test_data)
-evaluation_results = evaluate(predictions, references)
 
+# Get and print evaluation results.
+evaluation_results = evaluate(predictions, references)
 print(evaluation_results)
