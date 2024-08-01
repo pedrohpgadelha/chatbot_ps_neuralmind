@@ -8,9 +8,7 @@ Para execução do script, previamente deve-se ter instalado:
  - [Pipenv](https://pipenv.pypa.io/en/latest/#install-pipenv-today) 2022.12.19 ou mais recente
 
 ## Como utilizar
-Para instalar e gerenciar dependências, usei o Pipenv. 
-
-Para começar, execute:
+Primeiro, clone o repositório em sua máquina. Então, para começar, na raíz do projeto, execute:
 ```bash
 pipenv install --python 3.10
 ```
