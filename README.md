@@ -50,33 +50,21 @@ O modelo de linguagem gpt-4o é inicializado com ChatOpenAI. As partes do texto 
 Duas cadeias principais são criadas: uma para combinar documentos e outra para recuperação e resposta (retrieval chain e question answering chain). A interface do chatbot é construída usando Streamlit, permitindo que os usuários insiram suas perguntas sobre o vestibular em um ambiente mais intuitivo e acessível. Ao clicar no botão, a pergunta do usuário é enviada através da cadeia de recuperação e resposta, e a resposta gerada é exibida na interface.
 
 ## Resultados
+#### BLEU (Bilingual Evaluation Understudy)
+- **BLEU Score**: Esta métrica mede a precisão da sobreposição de n-gramas entre a resposta gerada pelo modelo e uma ou mais respostas de referência. Uma pontuação de 0.2017 indica uma correspondência moderada. BLEU é particularmente útil para avaliar traduções automáticas e respostas curtas.
 
-#### BLEU Score
-- **BLEU**: 0.2017
+#### ROUGE (Recall-Oriented Understudy for Gisting Evaluation)
+- **ROUGE-1**: Mede a sobreposição de unigramas (palavras individuais) entre a resposta gerada e a resposta de referência.
+  - **Recall (r)**: 0.7441. Indica que o modelo captura 74.41% das palavras relevantes.
+  - **Precision (p)**: 0.1709. Reflete que 17.09% das palavras geradas pelo modelo são relevantes.
+  - **F1 Score (f)**: 0.2661. É a média harmônica de precisão e recall, balanceando ambos.
 
-#### ROUGE Scores
-- **ROUGE-1**:
-  - **Recall (r)**: 0.7441
-  - **Precision (p)**: 0.1709
-  - **F1 Score (f)**: 0.2661
+- **ROUGE-2**: Mede a sobreposição de bigramas (pares de palavras) entre a resposta gerada e a resposta de referência.
+  - **Recall (r)**: 0.6261. Mostra que o modelo captura 62.61% dos bigramas relevantes.
+  - **Precision (p)**: 0.1141. Indica que 11.41% dos bigramas gerados são relevantes.
+  - **F1 Score (f)**: 0.1813. Média harmônica de precisão e recall para bigramas.
 
-- **ROUGE-2**:
-  - **Recall (r)**: 0.6261
-  - **Precision (p)**: 0.1141
-  - **F1 Score (f)**: 0.1813
-
-- **ROUGE-L**:
-  - **Recall (r)**: 0.7403
-  - **Precision (p)**: 0.1693
-  - **F1 Score (f)**: 0.2639
-
-### Análise dos Resultados
-- **BLEU Score**: O valor de 0.2017 indica uma moderada correspondência entre as frases geradas pelo modelo e as de referência, medindo a precisão da sobreposição de n-gramas.
-  
-- **ROUGE-1**: A pontuação de Recall alta (0.7441) sugere que o modelo captura bem os elementos relevantes, mas a precisão (0.1709) e o F1 Score (0.2661) indicam que há espaço para melhorias na exatidão das respostas.
-
-- **ROUGE-2**: A pontuação de Recall de 0.6261 mostra uma boa captura de bigramas relevantes, porém a precisão (0.1141) e o F1 Score (0.1813) também indicam a necessidade de melhorar a precisão.
-
-- **ROUGE-L**: A pontuação de Recall alta (0.7403) reflete a capacidade do modelo de capturar a estrutura sequencial dos textos, mas a precisão (0.1693) e o F1 Score (0.2639) sugerem que ainda há um desequilíbrio entre a recuperação de informações e a precisão delas.
-
-Essas métricas ajudam a avaliar a qualidade das respostas geradas pelo modelo em relação às de referência, destacando pontos fortes e áreas que necessitam de melhorias.
+- **ROUGE-L**: Mede a sobreposição da subsequência mais longa (longest common subsequence) entre a resposta gerada e a de referência, refletindo a estrutura sequencial do texto.
+  - **Recall (r)**: 0.7403. Indica que o modelo captura 74.03% da estrutura sequencial relevante.
+  - **Precision (p)**: 0.1693. Reflete que 16.93% da sequência gerada é relevante.
+  - **F1 Score (f)**: 0.2639. Média harmônica de precisão e recall para a estrutura sequencial.
