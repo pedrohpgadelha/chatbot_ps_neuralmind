@@ -1,4 +1,4 @@
-# ChatBot PS NeuralMind
+# ChatBot Processo Seletivo NeuralMind
 Chatbot para responder dúvidas acerca do Vestibular Unicamp 2025 feito como parte do processo seletivo de estágio da NeuralMind jul/2024.
 
 ## Pré-requisitos
@@ -51,7 +51,9 @@ Duas cadeias principais são criadas: uma para combinar documentos e outra para 
 
 ## Resultados
 #### BLEU (Bilingual Evaluation Understudy)
-- **BLEU Score**: Esta métrica mede a precisão da sobreposição de n-gramas entre a resposta gerada pelo modelo e uma ou mais respostas de referência. Uma pontuação de 0.2017 indica uma correspondência moderada. BLEU é particularmente útil para avaliar traduções automáticas e respostas curtas.
+- **BLEU Score** :0.2017.
+
+Esta métrica mede a precisão da sobreposição de n-gramas entre a resposta gerada pelo modelo e uma ou mais respostas de referência. Uma pontuação de 0.2017 indica uma correspondência moderada. BLEU é particularmente útil para avaliar traduções automáticas e respostas curtas.
 
 #### ROUGE (Recall-Oriented Understudy for Gisting Evaluation)
 - **ROUGE-1**: Mede a sobreposição de unigramas (palavras individuais) entre a resposta gerada e a resposta de referência.
