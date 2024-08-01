@@ -8,7 +8,16 @@ Para execução do script, previamente deve-se ter instalado:
  - [Pipenv](https://pipenv.pypa.io/en/latest/#install-pipenv-today) 2022.12.19 ou mais recente
 
 ## Como utilizar
-Primeiro, clone o repositório em sua máquina. Então, para começar, na raíz do projeto, execute:
+Primeiro, clone o repositório em sua máquina com:
+```bash
+git clone 'https://github.com/pedrohpgadelha/chatbot_ps_neuralmind'
+```
+
+
+Gere uma API key no site da OpenAI e coloque-a em um documento nomeado '.env' na raiz do diretório. Nesse documento escreva apenas 'OPENAI_API_KEY=sua_chave', trocando *sua_chave* pela chave que você gerou.
+
+
+Então, na raíz do projeto, execute:
 ```bash
 pipenv install --python 3.10
 ```
