@@ -70,3 +70,9 @@ Esta métrica mede a precisão da sobreposição de n-gramas entre a resposta ge
   - **Recall (r)**: 0.7403. Indica que o modelo captura 74.03% da estrutura sequencial relevante.
   - **Precision (p)**: 0.1693. Reflete que 16.93% da sequência gerada é relevante.
   - **F1 Score (f)**: 0.2639. Média harmônica de precisão e recall para a estrutura sequencial.
+
+
+## Possíveis melhorias
+1. Ajustar o método de carregamento do documento para garantir que as partes mais relevantes do texto sejam priorizadas. Isso pode incluir a utilização de técnicas de re-ranking ou a implementação de um sistema de recuperação híbrido que combine métodos de recuperação lexical e semântica.
+2. Incluir mais documentos relevantes, como FAQs, guias de estudo, e históricos de provas anteriores para fornecer um contexto mais amplo e detalhado nas respostas.
+3. Melhorar a forma como o chatbot lida com perguntas para as quais não possui respostas, talvez oferecendo links diretos para possíveis partes relevantes do documento base.
