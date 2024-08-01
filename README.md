@@ -15,11 +15,6 @@ Para começar, execute:
 pipenv install --python 3.10
 ```
 
-Para contribuir e desenvolver o projeto, execute:
-```bash
-pipenv install --python 3.10 --dev
-```
-
 Execute os comandos dentro do shell:
 ```bash
 pipenv shell
@@ -30,7 +25,7 @@ Finalmente, para inicializar o chatbot, execute o seguinte comando:
 streamlit run src/main.py
 ```
 
-Uma janela será gerada em seu browser com a interface do chatbot. Digite sua pergunta no campo designado, clique no botão 'Gerar resposta' e aguarde sua resposta!
+Uma janela será gerada em seu browser com a interface do chatbot. Digite sua pergunta no campo designado, clique no botão **'Gerar resposta'** e aguarde sua resposta!
 
 ## Como testar
 
@@ -48,6 +43,13 @@ Carreguei o arquivo PDF da publicação da Resolução GR-029/2024, de 10/07/202
 O modelo de linguagem gpt-4o é inicializado com ChatOpenAI. As partes do texto são transformadas em vetores para facilitar a recuperação de informações utilizando Chroma e OpenAIEmbeddings. Um prompt do sistema é configurado para orientar o chatbot a responder de maneira concisa e específica às perguntas sobre o vestibular, montado com ChatPromptTemplate.
 
 Duas cadeias principais são criadas: uma para combinar documentos e outra para recuperação e resposta (retrieval chain e question answering chain). A interface do chatbot é construída usando Streamlit, permitindo que os usuários insiram suas perguntas sobre o vestibular em um ambiente mais intuitivo e acessível. Ao clicar no botão, a pergunta do usuário é enviada através da cadeia de recuperação e resposta, e a resposta gerada é exibida na interface.
+
+### Uso do ChatGPT
+
+Utilizei o ChatGPT para obter um início para o código da cadeia de RAG visto em src/main.py, mas diversas vezes as soluções dadas se demonstraram insuficientes, então busquei outras na internet (StackOverflow e documentação do LangChain principalmente) e depois voltei ao ChatGPT apenas para corrigir erros em minha implementação.
+
+Também o utilizei para escrever um modelo base para esse relatório e depois alterei e inclui o que achei necessário.
+
 
 ## Resultados
 #### BLEU (Bilingual Evaluation Understudy)
