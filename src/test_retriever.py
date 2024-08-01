@@ -48,7 +48,7 @@ rag_chain = create_retrieval_chain(retriever, question_answer_chain)
 
 def load_test_data(file_path):
     '''
-    Retorna os dados contidos no arquivo de perguntas e respostas para teste.
+    Returns the data in the questions and answers file for testing.
     '''
     with open(file_path, 'r') as file:
         data = json.load(file)
@@ -56,6 +56,9 @@ def load_test_data(file_path):
 
 # Initialize your RAG chain.
 def test_rag_chain(rag_chain, test_data):
+    '''
+    Returns the RAG answers for the test questions and the expected answers.
+    '''
     predictions = []
     references = []
     
@@ -71,6 +74,9 @@ def test_rag_chain(rag_chain, test_data):
     return predictions, references
 
 def evaluate(predictions, references):
+    '''
+    Returns the model evaluation metrics.
+    '''
     # Flatten references for Rouge
     flat_references = [ref[0] for ref in references]
     
